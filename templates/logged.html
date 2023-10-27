@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<style>
+    body{
+        background-size: cover;
+      }
+      </style>
+  <body style="background-image: url({% static '/about1.jpg' %});"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<br>
+<div style="background-image: url({% static '/' %});" class="container">
+<h1 style="text-align:center; color: darkblue;">Welcome, {{request.user.username}} </h1><br><br>
+<h2 style="text-align:center;">Name: {{client_user.name}}</h2>
+<h2 style="text-align:center;">Place: {{client_user.place}}</h2>
+<h2 style="text-align:center;">Phone: {{client_user.phone}}</h2>
+<h2 style="text-align:center;">Email: {{client_user.mail}}</h2>
+
+<form action="booking" method="post">
+  {% csrf_token %}
+  <!-- <input type="submit" value="Booking"><br><br> -->
+  <button type="submit">Booking</button><br><br>
+</form>
+
+<form action="" method="post">
+  {% csrf_token %}
+  <button type="submit">Logout</button>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+about
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<!--<h1>About Page</h1>-->
+<style>
+      body{
+      background-size: cover;
+    }
+    </style>
+<body style="background-image: url({% static '/about1.jpg' %});">
+
+</style>
+<!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid w-150 h-150 rounded" src="{% static '/about.png' %}" >
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">About Us</h5>
+                        <h1 style="color: rgb(255, 204, 0);" class="display-4">Best Sports Turf In the City</h1>
+                    </div>
+                    <h3 style="color: black;">The sports turf is designed for multiple games like cricket, football, badminton, and volleyball. </h3>
+           
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+{% endblock %}

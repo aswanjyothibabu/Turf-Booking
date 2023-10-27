@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<style>
+    .container{
+         background-size: cover;
+    }
+  body{
+  background-size: cover;
+}
+</style>
+<body style="background-image: url({% static '/about1.jpg' %});">
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<br>
+<div style="background-image: url({% static '/images/football.jpg' %});" class="container">
+<h1 style="text-align:center;">Book Your Games Here...</h1>
+<div class="col-1 text-left pl-md-3">
+<form style="margin-left: 16rem;" action="booked" method="post">
+    {% csrf_token %}
+    <label>Game</label>
+    <select name="game1" required>
+        <option selected></option>
+        <option>CRICKET</option>
+        <option>FOOTBALL</option>
+        <option>BADMINTON</option>
+        <option>VOLLEYBALL</option>
+    </select>
+    
+    <label>Date&Time</label>
+    <input size="70" type="datetime-local" name="date1" required><br><br>
+
+    <label>Time-Needed</label>
+    <select name="time1" required>
+        <option selected></option>
+        <option>1 hour</option>
+        <option>2 hour</option>
+        <option>3 hour</option>
+        <option>4 hour</option>
+        <option>Full Day</option>
+        <option>Half Day</option>
+    </select>
+    
+    <!-- <input type="submit" value="Submit"><br> -->
+    <button class="btn btn-primary" type="submit">Submit</button><br><br><br><br><br><br>
+</form>
+    </div>
+</div>
+
+{% endblock %}
+

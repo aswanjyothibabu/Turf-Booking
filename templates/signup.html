@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login Page
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .login-container {
+      width: 300px;
+      margin: 100px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #0056b3;
+    }
+    body{
+      background-size: cover;
+    }
+    </style>
+<body style="background-image: url({% static '/about1.jpg' %});">
+
+<div class="login-container">
+  <h2>Register </h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="text" name="place" placeholder="Place" required><br>
+    <input type="number" name="phone" placeholder="Phone Number" required><br>
+    <input type="text" name="mail" placeholder="Email ID" required><br>
+    <input type="text" name="username" placeholder="Username" required><br> 
+    <input type="password" name="password" placeholder="Password" required><br>
+    <button type="submit">Register</button>
+
+      {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+              {{ message }}
+          </li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+
+  </form>
+</div>
+
+
+
+
+{% endblock %}

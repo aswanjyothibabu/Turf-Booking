@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet"
+      href=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css ">
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+<!--    this is from bootstrap-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+      href="{% static '/css/style.css' %}">
+<style>
+  li a:hover{
+    background-color: aliceblue;
+  }
+</style>
+  </head>
+
+  <body>
+
+    <nav class="navbar bg-warning navbar-expand-md ">
+      <div class="container">
+        <div class="col-1 text-left pl-md-0">
+          <h1 class="text-white">TURF BOOKING</h1>
+        </div>
+
+        <div
+          class="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
+          <ul class="navbar-nav justify-content-center  fw-bold">
+            <li class="nav-item active">
+              <a class="nav-link text-black" href="home">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="about">About</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-black" href="location">Location</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="games">Games</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="signup">Signup</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <br><br>
+    
+
+
+    {% block content %}
+
+    
+     {% endblock %}
+
+
+
+
+
+     
+    <section class="fixed-bottom">
+      <footer class="pt-2 pb-2  bg-warning text-black">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-8">
+              <h4>Contact Number: +91 1234567890</h4>
+            </div>
+            <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end text-black">
+              © 2023 Turf bookings
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+<!--  this is from bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>
